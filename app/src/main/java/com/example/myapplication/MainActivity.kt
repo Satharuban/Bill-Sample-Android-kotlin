@@ -71,6 +71,8 @@ class MainActivity : AppCompatActivity() {
 
             }
             rv.adapter = adapter
+            CalculateTotal()
+
         }
 
 
@@ -103,11 +105,26 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun <E> ArrayList<E>.indexOf(): Int {
+    private  fun CalculateTotal() {
+        var total:Int=0
+        for (item in items){
+            var p=item.item_unit_price
+            var q=item.item_count
+            total += p* q!!
+        }
 
-        return items.size
+            Log.e("total", total.toString())
+        }
+
+
+
+
+
+
+
+
     }
-}
+
 
 
 
